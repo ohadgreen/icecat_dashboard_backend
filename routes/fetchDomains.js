@@ -9,11 +9,11 @@ module.exports = app => {
 
     function fetchDomainsListByLocale(request, response) {
         vendorDbConn.executeQuery(request, response, function (request, response, connection) {
-            var query = "select distinct icp.domain from icecat_products icp ";
+            var query = "select distinct icp.domain from icecat_products_ui icp ";
             query += " where locale = :locale";
             query += " order by icp.domain";
             console.log("query: ", query);
-            connection.execute(query, { locale: request.params.locale}, {
+            connection.execute(query, { locale: request.params.locale }, {
                 outFormat: oracledb.OBJECT // Return the result as Object
             },
                 function (err, result) {

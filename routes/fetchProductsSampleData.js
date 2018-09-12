@@ -12,7 +12,7 @@ module.exports = app => {
             var domain = request.params.domain;
             var query = "select product_id, property, prop_value from icecat_data icd ";
             query += " where  locale = 'EN'";
-            query += ` and domain = '${domain}'`;
+            // query += ` and domain = '${domain}'`;
             query += " and icd.property in ('Title', 'Brand', 'MPN', 'UPC', 'Battery type', 'Alarm clock', 'Volume control', 'HighPicURL')";
             query += " and rownum <= 50";
             connection.execute(query, {}, {

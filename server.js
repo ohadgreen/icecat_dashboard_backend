@@ -19,7 +19,7 @@ app.listen(port, function () {
 });
 
 router.get("/test", function (res) {
-    res.json({ message: "API Server Initialized" });
+    return ({ message: "API Server Initialized" });
 });
 
 router.get("/version", function (res) {
